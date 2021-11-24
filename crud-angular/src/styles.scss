@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/theming';
+@include mat-core();
+
+// Define cor primary do tema
+$custom-app-primary: mat-palette($mat-blue);
+// Define cor secundaria do tema
+$custom-app-secondary: mat-palette($mat-indigo, A200, A400, 700);
+// Define cor de erro
+$custom-app-worn: mat-palette($mat-red);
+// Informa as cores que vão ser utilizada para montar o tema
+$custon-theme: mat-light-theme($custom-app-primary, $custom-app-secondary, $custom-app-worn);
+// Informa qual paleta o tema vai utilizar
+@include angular-material-theme($custon-theme);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
